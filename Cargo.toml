@@ -1,0 +1,27 @@
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = [
+    "Zhang Yanpo <drdr.xp@gmail.com>",
+]
+categories = ["development-tools", "development-tools::procedural-macro-helpers", "rust-patterns"]
+description = "copy or clone a value"
+documentation = "https://docs.rs/dupit"
+homepage = "https://github.com/drmingdrmer/dupit"
+keywords = ["copy", "clone"]
+license = "Apache-2.0"
+repository = "https://github.com/drmingdrmer/dupit"
+
+[workspace.dependencies]
+proc-macro2 = { version = "1.0" }
+quote = { version = "1.0" }
+syn = { version = "2.0", features = ["full", "extra-traits"] }
+
+[workspace]
+
+resolver = "2"
+
+members = [
+    "dupit",
+    "dupit-derive",
+]

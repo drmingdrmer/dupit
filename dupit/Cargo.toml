@@ -1,0 +1,20 @@
+[package]
+name = "dupit"
+
+version = { workspace = true }
+edition = { workspace = true }
+authors = { workspace = true }
+categories = { workspace = true }
+description = { workspace = true }
+documentation = { workspace = true }
+homepage = { workspace = true }
+keywords = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+
+[dependencies]
+dupit-derive = { version = "0.1.0", path = "../dupit-derive" }
+
+[dev-dependencies]
+macrotest = "1"
+trybuild = "1.0"

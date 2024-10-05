@@ -1,0 +1,24 @@
+error[E0599]: the method `duplicate_impl` exists for reference `&&Wrapper<&NotClone>`, but its trait bounds were not satisfied
+ --> tests/fail/not_clone.rs:1:10
+  |
+1 | #[derive(dupit::Duplicate)]
+  |          ^^^^^^^^^^^^^^^^ method cannot be called on `&&Wrapper<&NotClone>` due to unsatisfied trait bounds
+2 | struct NotClone;
+  | --------------- doesn't satisfy `NotClone: Clone` or `NotClone: Copy`
+  |
+ ::: src/lib.rs
+  |
+  |     pub struct Wrapper<T>(pub T);
+  |     --------------------- doesn't satisfy `Wrapper<&NotClone>: DuplicateImpl<NotClone>`
+  |
+  = note: the following trait bounds were not satisfied:
+          `NotClone: Copy`
+          which is required by `&Wrapper<&NotClone>: DuplicateImpl<NotClone>`
+          `NotClone: Clone`
+          which is required by `Wrapper<&NotClone>: DuplicateImpl<NotClone>`
+  = note: this error originates in the derive macro `dupit::Duplicate` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider annotating `NotClone` with `#[derive(Clone, Copy)]`
+  |
+2  + #[derive(Clone, Copy)]
+3  | struct NotClone;
+   |

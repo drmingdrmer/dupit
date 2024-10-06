@@ -1,5 +1,6 @@
 [package]
 name = "dupit"
+readme = "src/lib_readme.md"
 
 version = { workspace = true }
 edition = { workspace = true }

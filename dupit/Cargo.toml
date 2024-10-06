@@ -14,7 +14,7 @@ license = { workspace = true }
 repository = { workspace = true }
 
 [dependencies]
-dupit-derive = { version = "0.1.0", path = "../dupit-derive" }
+dupit-derive = { version = "0.2.0", path = "../dupit-derive" }
 
 [dev-dependencies]
 macrotest = "1"
